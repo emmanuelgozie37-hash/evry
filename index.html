@@ -1,0 +1,163 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FTP — For The People</title>
+
+  <!-- Tailwind CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="FTP — For The People. A modern Web3 UI demo." />
+
+  <!-- Simple fav / logo -->
+  <link rel="icon" href="imgs/WhatsApp Image 2026-02-16 at 8.07.55 AM (1).jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css" integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-neutral-900 text-slate-100 antialiased">
+  <header class="backdrop-blur-sm bg-black/50 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="imgs/WhatsApp Image 2026-02-16 at 8.07.55 AM (1).jpeg" alt="FTP logo" class="w-10 h-10 rounded-full object-cover" />
+        <div>
+          <div class="font-semibold">For The People</div>
+          <div class="text-xs text-slate-400">FTP_SOL</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="text-slate-200 hover:text-white">About</a>
+        <a href="#roadmap" class="text-slate-200 hover:text-white">Roadmap</a>
+        <a href="#community" class="text-slate-200 hover:text-white">Community</a>
+        <a href="https://x.com/FTP_SOL" target="_blank" rel="noreferrer" class="text-slate-200 hover:text-white">X</a>
+        <a href="https://t.me/forthepeopleonsol1" target="_blank" rel="noreferrer" class="text-slate-200 hover:text-white">Telegram</a>
+      </nav>
+
+      <!-- mobile menu -->
+      <div class="md:hidden flex items-center">
+        <button id="mobileBtn" class="p-2 rounded-md bg-white/5">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <div class="flex flex-col gap-3">
+        <a href="#about" class="block text-slate-200">About</a>
+        <a href="#roadmap" class="block text-slate-200">Roadmap</a>
+        <a href="#community" class="block text-slate-200">Community</a>
+        <a href="https://x.com/FTP_SOL" target="_blank" rel="noreferrer" class="block text-slate-200">X</a>
+        <a href="https://t.me/forthepeopleonsol1" target="_blank" rel="noreferrer" class="block text-slate-200">Telegram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Hero -->
+    <section class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">For The People — FTP</h1>
+        <p class="mt-4 text-slate-300 max-w-xl">
+          Crypto was meant to give regular people a real chance to win. Somewhere along the way it became a space where
+          the same small circle moves first and the rest of the market reacts. FTP is built around a simple idea: a strong narrative,
+          real attention, and a community growing at the same time.
+        </p>
+
+        <ul class="mt-6 grid gap-3">
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-9 h-9 bg-emerald-500 rounded-full text-black font-bold">1</span>
+            <div>
+              <div class="font-semibold">People first</div>
+              <div class="text-slate-400 text-sm">Momentum starts with people, spreads through attention, and turns into value.</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-9 h-9 bg-emerald-500 rounded-full text-black font-bold">2</span>
+            <div>
+              <div class="font-semibold">Grow together</div>
+              <div class="text-slate-400 text-sm">Be early together, grow together, create energy that others want to join.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="https://x.com/FTP_SOL" target="_blank" rel="noreferrer" class="px-5 py-3 bg-slate-800 hover:bg-slate-700 rounded-md border border-slate-700">Follow on X</a>
+          <a href="https://t.me/forthepeopleonsol1" target="_blank" rel="noreferrer" class="px-5 py-3 bg-emerald-500 hover:bg-emerald-600 rounded-md text-black font-medium">Join Telegram</a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img src="imgs/WhatsApp Image 2026-02-16 at 8.07.55 AM (1).jpeg" alt="FTP hero" class="w-full rounded-2xl shadow-2xl object-cover h-80 md:h-[420px]" />
+        <div class="absolute -bottom-8 left-6 right-6 grid grid-cols-3 gap-4">
+          <div class="bg-gradient-to-br from-slate-800/60 to-black/30 rounded-xl p-3 shadow-lg backdrop-blur-sm">
+            <img src="imgs/WhatsApp Image 2026-02-16 at 8.07.55 AM.jpeg" alt="" class="w-full h-24 object-cover rounded-md"/>
+            <div class="mt-2 text-sm">Community Highlights</div>
+          </div>
+          <div class="bg-gradient-to-br from-slate-800/60 to-black/30 rounded-xl p-3 shadow-lg backdrop-blur-sm">
+            <img src="imgs/WhatsApp Image 2026-02-16 at 8.07.57 AM (1).jpeg" alt="" class="w-full h-24 object-cover rounded-md"/>
+            <div class="mt-2 text-sm">Momentum Stories</div>
+          </div>
+          <div class="bg-gradient-to-br from-slate-800/60 to-black/30 rounded-xl p-3 shadow-lg backdrop-blur-sm">
+            <img src="imgs/WhatsApp Image 2026-02-16 at 8.07.57 AM.jpeg" alt="" class="w-full h-24 object-cover rounded-md"/>
+            <div class="mt-2 text-sm">Join the Movement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Philosophy -->
+    <section id="about" class="mt-20">
+      <div class="bg-gradient-to-r from-slate-900/50 to-black/40 rounded-2xl p-8 md:p-12 shadow-lg">
+        <h2 class="text-2xl font-bold">Our Philosophy</h2>
+        <p class="mt-4 text-slate-300 max-w-3xl">
+          Momentum in crypto starts with people, spreads through attention, and turns into value when the crowd moves together.
+          This is about being early together, growing together, and creating the kind of energy that people want to be part of.
+        </p>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-800 rounded-xl p-6">
+        <h3 class="font-semibold">Phase 1</h3>
+        <p class="text-slate-400 text-sm mt-2">Community building and narrative amplification.</p>
+      </div>
+      <div class="bg-slate-800 rounded-xl p-6">
+        <h3 class="font-semibold">Phase 2</h3>
+        <p class="text-slate-400 text-sm mt-2">Partnerships, events, and attention campaigns.</p>
+      </div>
+      <div class="bg-slate-800 rounded-xl p-6">
+        <h3 class="font-semibold">Phase 3</h3>
+        <p class="text-slate-400 text-sm mt-2">Shared growth and utility initiatives.</p>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community" class="mt-12">
+      <h2 class="text-2xl font-bold">Community</h2>
+      <p class="mt-3 text-slate-300">Join the conversation and help shape FTP. Follow updates and meet others who want crypto to be for the people.</p>
+
+      <div class="mt-6 flex gap-3">
+        <a href="https://x.com/FTP_SOL" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md">
+          <i class="fa-brands fa-square-x-twitter"></i> 
+        </a>
+        <a href="https://t.me/forthepeopleonsol1" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-md">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-slate-400 text-sm">© <span id="year"></span> For The People</div>
+      <div class="text-slate-400 text-sm"> — Follow: <a href="https://x.com/FTP_SOL" class="text-emerald-400" target="_blank" rel="noreferrer">@FTP_SOL</a></div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
