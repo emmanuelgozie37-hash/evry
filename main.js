@@ -1,4 +1,3 @@
-// ...existing code...
 // Minimal JS: mobile nav, connect-wallet (Phantom/Solana fallback), small UI touches
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,4 +55,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const connectBtnMobile = document.getElementById('connectBtnMobile');
   if (connectBtn) connectBtn.addEventListener('click', connectWallet);
   if (connectBtnMobile) connectBtnMobile.addEventListener('click', connectWallet);
+
+  // Tokenomics pie chart (Chart.js must be loaded before this script)
+  const tokenCanvas = document.getElementById('tokenChart');
+  if (tokenCanvas && window.Chart) {
+    const ctx = tokenCanvas.getContext('2d');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Locked 95%', 'Marketing 3%', 'Team 1%', 'Dev 1%'],
+        datasets: [{
+          data: [95, 3, 1, 1],
+          backgroundColor: ['#10B981', '#F97316', '#06B6D4', '#EF4444'],
+          borderColor: '#0f172a',
+          borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.label}: ${ctx.parsed}%`
+            }
+          }
+        },
+        cutout: '55%'
+      }
+    });
+
+    // --- dynamic mini pie using the same data as the chart ---
+    (function renderMiniPieFromLegend() {
+      const items = Array.from(document.querySelectorAll('.legend-item'));
+      const miniPie = document.getElementById('miniPie');
+      if (!items.length || !miniPie) return;
+
+      const total = items.reduce((s, it) => s + Number(it.dataset.value || 0), 0) || 100;
+      let start = 0;
+      const segments = [];
+
+      items.forEach(it => {
+        const value = Number(it.dataset.value || 0);
+        const deg = (value / total) * 360;
+        const color = it.dataset.color || window.getComputedStyle(it.querySelector('span')).backgroundColor;
+        const segStart = start;
+        const segEnd = start + deg;
+        segments.push(`${color} ${segStart}deg ${segEnd}deg`);
+        start = segEnd;
+
+        // ensure displayed percentage matches data (safe)
+        const valueEl = it.querySelector('.legend-value');
+        if (valueEl) valueEl.textContent = `${value}%`;
+      });
+
+      const gradient = `conic-gradient(${segments.join(', ')})`;
+      miniPie.style.background = gradient;
+    })();
+  }
 });
